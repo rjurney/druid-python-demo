@@ -23,8 +23,8 @@ def time_series():
     						  intervals = intervals, 
     						  aggregations = {"count" : doubleSum("edits")}
     					     )
-    print json.dumps(counts)
-    return render_template('index.html', counts=counts)
+    json_data = json.dumps(counts)
+    return render_template('index.html', counts=counts, json_data=json_data)
 
 if __name__ == "__main__":
     app.run(debug=True)
